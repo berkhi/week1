@@ -11,7 +11,7 @@ Bu repo, Hafta 1 boyunca yazdığım örnekleri ve pratikleri toplar.
 - [x] **03 — Array metotları** — `map` · `filter` · `reduce` · `find` · `forEach`
 - [x] **04 — Modern JS** — destructuring, spread/rest, template literals, modüller (import/export)
 - [x] **05 — DOM & async** — seçme/event, Promise, `fetch`, `async/await`
-- [ ] **06 — Git & GitHub** — init, add, commit, push, ilk repo
+- [~] **06 — Git & GitHub** — init, add, commit, push, ilk repo
 - [ ] **07 — React'e ilk adım** — Vite + react-ts, JSX, component + props, ilk `useState`
 
 ## 🔴 Tasarım Şeridi — İlerleme
