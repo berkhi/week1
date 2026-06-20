@@ -1,0 +1,82 @@
+<!--
+  ============================================================
+  DERS 05 — DOM & EVENT (Parça 1)  ·  Oyun Alanı
+  ============================================================
+  DOM = Document Object Model. Tarayıcının, HTML sayfanı JavaScript'in
+  dokunabileceği "nesnelere" çevirmiş hali. Yani JS ile:
+     • elemanları BULURUZ      (getElementById, querySelector)
+     • içeriğini DEĞİŞTİRİRİZ   (textContent, classList...)
+     • OLAYLARA tepki veririz   (tıklama, yazma → addEventListener)
+
+  Aşağıdaki her kart bir DOM becerisini gösterir. Mantık dom.js'te.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders 05 — DOM & Event</title>
+    <link rel="stylesheet" href="dom.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>DOM &amp; Event Oyun Alanı</h1>
+      <p>JavaScript ile sayfayı bul, değiştir, olaylara tepki ver.</p>
+    </header>
+
+    <main class="izgara">
+
+      <!-- DEMO 1: metni değiştirme (click event + textContent) -->
+      <section class="kart">
+        <h2>1) Metni değiştir</h2>
+        <p class="aciklama">Tıklama olayı + <code>textContent</code></p>
+        <p id="mesaj" class="vurgu-metin">Merhaba! 👋</p>
+        <button id="degistir-btn">Metni değiştir</button>
+      </section>
+
+      <!-- DEMO 2: sınıf değiştirme (classList.toggle) -->
+      <section class="kart">
+        <h2>2) Tema değiştir</h2>
+        <p class="aciklama">Bir CSS sınıfını aç/kapa: <code>classList.toggle</code></p>
+        <div id="kutu" class="tema-kutu">Bana tıkla / butona bas</div>
+        <button id="tema-btn">Koyu / Açık</button>
+      </section>
+
+      <!-- DEMO 3: canlı yansıma (input event) -->
+      <section class="kart">
+        <h2>3) Canlı yansıma</h2>
+        <p class="aciklama">Yazma olayı: <code>input</code></p>
+        <input id="yansima-girdi" type="text" placeholder="Bir şeyler yaz..." />
+        <p>Yazdığın: <strong id="yansima-cikti">—</strong></p>
+      </section>
+
+      <!-- DEMO 4: listeye ekleme/silme (createElement + appendChild) -->
+      <section class="kart">
+        <h2>4) Yapılacaklar listesi</h2>
+        <p class="aciklama">Eleman oluştur + ekle: <code>createElement</code>, <code>appendChild</code></p>
+        <div class="satir">
+          <input id="gorev-girdi" type="text" placeholder="Yeni görev..." />
+          <button id="ekle-btn">Ekle</button>
+        </div>
+        <ul id="gorev-listesi" class="gorev-listesi"></ul>
+      </section>
+
+      <!-- DEMO 5: Olay Kâşifi — tek kutu, birçok farklı olay -->
+      <section class="kart tam-genislik">
+        <h2>5) 🔍 Olay Kâşifi</h2>
+        <p class="aciklama">
+          Aynı kutu, farklı olaylar. Kutuya tıkla, çift tıkla, fareyle üzerine
+          gel/çık; kutucuğa yaz. Her olay aşağıdaki kayda düşsün.
+        </p>
+        <div id="kasif-kutu" class="kasif-kutu">Benimle etkileş 👇</div>
+        <input id="kasif-girdi" type="text" placeholder="Buraya yazınca keydown olayı tetiklenir..." />
+        <div class="kasif-baslik">📋 Olay kaydı (en yeni üstte):</div>
+        <ul id="kasif-log" class="kasif-log"></ul>
+      </section>
+
+    </main>
+
+    <footer class="footer"><p>Kaynak: <code>dom.js</code></p></footer>
+    <script src="dom.js"></script>
+  </body>
+</html>

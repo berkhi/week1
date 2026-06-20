@@ -1,0 +1,101 @@
+<!--
+  ============================================================
+  DERS 02 — ÖZET PROJESİ (görsel)
+  ============================================================
+  Ders 02'de terminalde (node ile) gördüğümüz her şeyi BU SAYFADA
+  gözle göreceğiz. Mantık script.js içinde; sonuçları o dosya
+  aşağıdaki kutulara yazıyor.
+
+  Açmak için bu dosyaya çift tıkla ya da tarayıcıda aç.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders 02 — JS Çekirdeği Özeti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="header">
+      <h1>Ders 02 — JavaScript Çekirdeği</h1>
+      <p>Değişkenler · Tipler · Koşullar · Döngüler · Fonksiyonlar · Diziler · Nesneler</p>
+    </header>
+
+    <main>
+      <!--
+        Her bölümde:
+          <h2> başlık + kısa açıklama
+          <div class="cikti" id="..."> ← JS sonuçları buraya yazacak (şimdilik boş)
+      -->
+
+      <section class="kart">
+        <h2>1) Değişkenler &amp; Tipler</h2>
+        <p class="aciklama">const (sabit) / let (değişebilir) ve veri türleri.</p>
+        <div class="cikti" id="cikti-degiskenler"></div>
+      </section>
+
+      <section class="kart">
+        <h2>2) Operatörler</h2>
+        <p class="aciklama">Matematik, karşılaştırma (===) ve mantık (&amp;&amp; || !).</p>
+        <div class="cikti" id="cikti-operatorler"></div>
+      </section>
+
+      <section class="kart">
+        <h2>3) Koşullar (if / else)</h2>
+        <p class="aciklama">Nota göre harf veren if/else zinciri.</p>
+        <div class="cikti" id="cikti-kosullar"></div>
+      </section>
+
+      <section class="kart">
+        <h2>4) Döngüler</h2>
+        <p class="aciklama">Aynı işi tekrar tekrar yapmak (for).</p>
+        <div class="cikti" id="cikti-donguler"></div>
+      </section>
+
+      <section class="kart">
+        <h2>5) Fonksiyonlar &amp; Arrow</h2>
+        <p class="aciklama">Bir işi paketle, istediğinde çağır.</p>
+        <div class="cikti" id="cikti-fonksiyonlar"></div>
+      </section>
+
+      <section class="kart">
+        <h2>6) Diziler (liste)</h2>
+        <p class="aciklama">Sıralı liste; index 0'dan başlar.</p>
+        <div class="cikti" id="cikti-diziler"></div>
+      </section>
+
+      <section class="kart">
+        <h2>7) Nesneler</h2>
+        <p class="aciklama">Tek bir şeyin özellikleri (anahtar: değer).</p>
+        <div class="cikti" id="cikti-nesneler"></div>
+      </section>
+
+      <section class="kart vurgu">
+        <h2>⭐ 8) Nesnelerden oluşan dizi (ürün listesi)</h2>
+        <p class="aciklama">Gerçek uygulamaların veri yapısı. React'te bunu kullanacaksın.</p>
+        <div class="cikti" id="cikti-urunler"></div>
+      </section>
+
+      <!-- BONUS: küçük interaktif parça (Ders 05 "DOM & event" tadımlığı) -->
+      <section class="kart bonus">
+        <h2>🎮 Bonus: Çift / Tek kontrolü (interaktif)</h2>
+        <p class="aciklama">Bir sayı yaz, butona bas — fonksiyon + koşul iş başında.</p>
+        <div class="form-satiri">
+          <input type="number" id="sayi-girdi" placeholder="örn. 7" />
+          <button id="kontrol-btn">Kontrol et</button>
+        </div>
+        <div class="cikti" id="cikti-bonus"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Hafta 1 · Ders 02 özeti — kaynağı görmek için <code>script.js</code>'i aç.</p>
+    </footer>
+
+    <!-- JS dosyasını EN SONDA yüklüyoruz: önce sayfa (kutular) hazır olsun,
+         sonra JS gelip içlerini doldursun. -->
+    <script src="script.js"></script>
+  </body>
+</html>

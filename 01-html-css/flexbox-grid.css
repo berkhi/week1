@@ -1,0 +1,153 @@
+/*
+  ============================================================
+  DERS 01b — FLEXBOX & GRID  (görünüm)
+  ============================================================
+*/
+
+/* Sayfa geneli (Ders 01'den tanıdık) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background: #f4f6f8;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.page-header { text-align: center; margin-bottom: 24px; }
+.page-header h1 { color: #2563eb; }
+
+.section-title {
+  margin: 32px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #2563eb;
+  color: #111827;
+}
+
+.label { margin: 20px 0 6px; font-weight: 600; }
+.mini  { margin: 12px 0 4px; font-size: 13px; color: #6b7280; }
+
+/* <code> = kod parçası. Tek tip yazıyla göstermek için. */
+code {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/*
+  .box = demolardaki renkli numaralı kutu.
+  İçindeki sayıyı tam ORTALAMAK için kendisi de küçük bir flex konteyner:
+  - display:flex  + justify-content:center (yatay orta) + align-items:center (dikey orta)
+*/
+.box {
+  background: #3b82f6;          /* mavi */
+  color: #fff;
+  font-weight: 700;
+  padding: 16px;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Demo konteynerlerinin ortak görünümü (kesik çerçeve = sınırı görelim) */
+.flex-demo,
+.grid-demo {
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+
+/* ======================================================
+   FLEXBOX DEMOLARI
+   "display: flex" => çocuk kutular tek eksende dizilir.
+   ANA EKSEN  = dizilme yönü (varsayılan: yatay/satır).
+   ÇAPRAZ EKSEN = ona dik yön (varsayılan: dikey).
+   ====================================================== */
+
+/* a) Temel: yan yana + aralarında 12px boşluk */
+.flex-demo.basic {
+  display: flex;
+  gap: 12px;
+}
+
+/* b) justify-content => ANA EKSENDE (yatay) dağıtım */
+.jc-start   { display: flex; gap: 12px; justify-content: flex-start; }
+.jc-center  { display: flex; gap: 12px; justify-content: center; }
+.jc-between { display: flex;            justify-content: space-between; }
+.jc-around  { display: flex;            justify-content: space-around; }
+
+/* c) align-items => ÇAPRAZ EKSENDE (dikey) hizalama.
+      "tall" ile konteyneri yükseltiyoruz ki dikey hizalama görünsün. */
+.tall { min-height: 140px; }
+.ai-center { display: flex; gap: 12px; align-items: center; }
+.ai-end    { display: flex; gap: 12px; align-items: flex-end; }
+
+/* d) flex-direction: column => ana ekseni DİKEY yapar (alt alta) */
+.dir-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* e) flex: 1 => bu eleman kalan boş alanı doldurur (esner/büyür).
+      Diğerleri kendi boyutunda kalır. */
+.box.grow { flex: 1; background: #ef4444; }   /* kırmızı: dikkat çeksin */
+
+/* ======================================================
+   GRID DEMOLARI
+   "display: grid" => 2 boyutlu ızgara (satır + sütun).
+   Sütunları "grid-template-columns" ile tanımlarız.
+   1fr = "fraction" = kalan alanın bir payı (eşit bölüşüm).
+   ====================================================== */
+
+/* a) 3 eşit sütun. repeat(3, 1fr) = 1fr 1fr 1fr kısa yazımı. */
+.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* b) Sabit yan sütun + esnek içerik (klasik "sidebar + content"). */
+.cols-sidebar {
+  display: grid;
+  grid-template-columns: 200px 1fr;  /* sol 200px sabit, sağ kalanı kaplar */
+  gap: 12px;
+}
+
+/* c) Bir hücreyi 2 sütun genişliğinde yapmak. */
+.box.wide {
+  grid-column: span 2;   /* yatayda 2 sütun kapla */
+  background: #10b981;   /* yeşil */
+}
+
+/* d) RESPONSIVE grid: sütun sayısını tarayıcı kendi ayarlar.
+      auto-fit  → sığabildiği kadar sütun oluştur.
+      minmax(120px, 1fr) → her sütun EN AZ 120px, kalan yeri eşit paylaş.
+      Sonuç: pencere genişledikçe sütun artar, daraldıkça azalır.
+      (Media query yazmadan responsive! Grid'in en güzel numarası.) */
+.auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.page-footer {
+  margin-top: 32px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}

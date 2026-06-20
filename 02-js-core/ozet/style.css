@@ -1,0 +1,119 @@
+/*
+  ============================================================
+  DERS 02 — ÖZET PROJESİ (görünüm)
+  ============================================================
+  Tanıdık geldi mi? Ders 01'deki CSS bilgisini burada kullanıyoruz:
+  box model, renkler, flexbox, grid.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background: #f4f6f8;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.header h1 { color: #2563eb; margin-bottom: 4px; }
+.header p  { color: #6b7280; font-size: 14px; }
+
+/*
+  Kartları GRID ile diziyoruz: geniş ekranda 2 sütun, dar ekranda
+  otomatik 1 sütun (Ders 01b'deki auto-fit numarası!).
+*/
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.kart {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+}
+.kart h2 { font-size: 18px; color: #111827; margin-bottom: 4px; }
+.aciklama { color: #6b7280; font-size: 13px; margin-bottom: 12px; }
+
+/* Vurgulu kart (nesnelerden oluşan dizi) — tüm satırı kaplasın */
+.kart.vurgu {
+  grid-column: 1 / -1;          /* baştan sona tüm sütunları kapla */
+  border: 2px solid #2563eb;
+  background: #eff6ff;
+}
+.kart.bonus {
+  grid-column: 1 / -1;
+  border: 2px dashed #10b981;
+}
+
+/*
+  .cikti = JS'in sonuçları yazdığı kutu.
+  .satir = her bir çıktı satırı (script.js her sonuç için bir tane ekler).
+*/
+.cikti {
+  background: #0f172a;          /* koyu "terminal" havası */
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+.satir {
+  padding: 2px 0;
+  white-space: pre-wrap;        /* uzun satırlar alt satıra kaysın */
+}
+.satir.baslik { color: #38bdf8; font-weight: 700; margin-top: 6px; }
+
+/* Ürün listesi satırları için küçük renk vurguları */
+.stokta-evet { color: #4ade80; }
+.stokta-hayir { color: #f87171; }
+
+/* Bonus form (flexbox: input + buton yan yana) */
+.form-satiri {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+#sayi-girdi {
+  flex: 1;                      /* kalan genişliği kapla */
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+#kontrol-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #10b981;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;              /* fare imleci "el" olsun */
+}
+#kontrol-btn:hover { background: #059669; }
+
+.footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 28px;
+}
+code {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 1px 6px;
+  border-radius: 4px;
+}

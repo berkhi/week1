@@ -1,0 +1,57 @@
+<!--
+  ============================================================
+  DERS 03 — ÜRÜN PANOSU (interaktif)
+  ============================================================
+  Array metotlarını GÖZLE göreceğiz. Sen butona basıp arama yazdıkça
+  script.js şu metotları çalıştırıp listeyi ve istatistikleri tazeler:
+    • filter → arama + filtre butonları
+    • map    → listeyi ekrana basma + istatistik
+    • reduce → toplam ve ortalama fiyat
+    • find   → en pahalı ürün
+-->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders 03 — Ürün Panosu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="header">
+      <h1>Ürün Panosu</h1>
+      <p>Array metotları iş başında: <code>filter</code> · <code>map</code> · <code>reduce</code> · <code>find</code></p>
+    </header>
+
+    <!-- KONTROLLER: arama kutusu + filtre butonları + sıralama -->
+    <section class="kontroller">
+      <input id="arama" type="text" placeholder="🔍 Ürün ara... (filter)" />
+
+      <div class="filtre-butonlari" id="filtreler">
+        <!-- data-filtre = JS'in okuyacağı özel etiket. "aktif" = seçili buton. -->
+        <button data-filtre="tumu" class="aktif">Tümü</button>
+        <button data-filtre="stokta">Sadece stokta</button>
+        <button data-filtre="ucuz">1000 TL altı</button>
+      </div>
+
+      <select id="siralama">
+        <option value="yok">Sırala: varsayılan</option>
+        <option value="artan">Fiyat ↑ (artan)</option>
+        <option value="azalan">Fiyat ↓ (azalan)</option>
+      </select>
+    </section>
+
+    <!-- İSTATİSTİK şeridi (map + reduce + find sonuçları buraya yazılır) -->
+    <section class="istatistik" id="istatistik"></section>
+
+    <!-- ÜRÜN LİSTESİ (map ile üretilen satırlar buraya yazılır) -->
+    <ul class="urun-listesi" id="urun-listesi"></ul>
+
+    <footer class="footer">
+      <p>Kaynağı görmek için <code>script.js</code>'i aç. Her etkileşim bir array metodu çalıştırır.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+# ============================================================
+# .gitignore — Git'in GÖRMEZDEN GELECEĞİ dosyalar
+# ============================================================
+# Buraya yazdığın şeyler repoya EKLENMEZ. Neden gerekli?
+#  - node_modules: yüzbinlerce dosya, çok büyük. "npm install" ile
+#    her bilgisayarda tekrar üretilir → repoda tutmaya GEREK YOK.
+#  - dist/build: derleme çıktısı, koddan tekrar üretilir.
+#  - .env: şifre/anahtar gibi GİZLİ bilgiler → asla repoya girmemeli.
+
+# Bağımlılıklar (npm install ile geri gelir)
+node_modules/
+
+# Derleme / üretim çıktıları
+dist/
+build/
+
+# Ortam değişkenleri (gizli bilgiler!)
+.env
+.env.local
+.env.*.local
+
+# Loglar
+*.log
+npm-debug.log*
+
+# İşletim sistemi / editör çöpleri
+.DS_Store
+.vscode/
+*.local

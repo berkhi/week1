@@ -1,0 +1,120 @@
+/* ============================================================
+   DERS 03 — ÜRÜN PANOSU (görünüm)
+   Ders 01 CSS bilgisi: flexbox, grid, box model, renkler.
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background: #f4f6f8;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { color: #2563eb; }
+.header p { color: #6b7280; font-size: 14px; }
+
+/* ---- Kontroller (flexbox ile sarmalı diziliş) ---- */
+.kontroller {
+  display: flex;
+  flex-wrap: wrap;            /* yer yetmezse alt satıra geç */
+  gap: 10px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+#arama {
+  flex: 1;                    /* kalan genişliği kapla */
+  min-width: 180px;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.filtre-butonlari { display: flex; gap: 6px; }
+.filtre-butonlari button {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.filtre-butonlari button:hover { background: #f1f5f9; }
+/* Aktif (seçili) buton mavi */
+.filtre-butonlari button.aktif {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+#siralama {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---- İstatistik şeridi (grid: 3 kutu) ---- */
+.istatistik {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.istat-kutu {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.istat-kutu .deger { font-size: 20px; font-weight: 700; color: #1d4ed8; }
+.istat-kutu .etiket { font-size: 12px; color: #6b7280; }
+
+/* ---- Ürün listesi ---- */
+.urun-listesi { list-style: none; display: grid; gap: 8px; }
+.urun-satiri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.urun-satiri .ad { font-weight: 600; }
+.urun-satiri .fiyat { color: #374151; }
+.rozet {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.rozet.evet { background: #dcfce7; color: #166534; }
+.rozet.hayir { background: #fee2e2; color: #991b1b; }
+
+/* Hiç sonuç yoksa gösterilecek mesaj */
+.bos-mesaj {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px;
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+}
+
+.footer { text-align: center; color: #9ca3af; font-size: 13px; margin-top: 24px; }
+code { background: #eef2ff; color: #3730a3; padding: 1px 6px; border-radius: 4px; }

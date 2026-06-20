@@ -1,0 +1,139 @@
+/*
+  ============================================================
+  DERS 01 — CSS TEMELLERİ
+  ============================================================
+  CSS = Cascading Style Sheets. HTML iskeletini GİYDİRİR:
+  renk, yazı tipi, boşluk, yerleşim... hepsi burada.
+
+  Bir CSS kuralının yapısı:
+
+      seçici {
+        özellik: değer;
+      }
+
+  Örnek:
+      h1 {
+        color: red;   ← h1 etiketlerinin yazı rengini kırmızı yap
+      }
+
+  SEÇİCİ (selector) 3 ana türde olur:
+    h1        → etiket adıyla seçer (tüm <h1>'ler)
+    .card     → class ile seçer (class="card" olan her şey)  → en çok kullanılan
+    #hakkimda → id ile seçer (id="hakkimda" olan TEK eleman)
+*/
+
+/*
+  ---- BOX MODEL (kutu modeli) — CSS'in en önemli kavramı ----
+  Sayfadaki HER eleman bir kutudur. Her kutunun 4 katmanı var:
+
+     ┌─────────── margin (dış boşluk: kutuyu başkalarından iter) ───────────┐
+     │   ┌─────── border (kenarlık çizgisi) ───────┐                        │
+     │   │   ┌─── padding (iç boşluk: içerik ile ──┐                        │
+     │   │   │     kenarlık arası)                  │                        │
+     │   │   │        İÇERİK (content)             │                        │
+     │   │   └────────────────────────────────────┘                        │
+     │   └─────────────────────────────────────────┘                        │
+     └───────────────────────────────────────────────────────────────────────┘
+*/
+
+/*
+  * (yıldız) = "her elemanı seç" demek.
+  Aşağısı çok yaygın bir başlangıç ayarı:
+*/
+* {
+  margin: 0;               /* tarayıcının varsayılan dış boşluklarını sıfırla */
+  padding: 0;              /* varsayılan iç boşlukları sıfırla */
+  box-sizing: border-box;  /* genişlik hesabına padding+border'ı DAHİL et (hayatı kolaylaştırır) */
+}
+
+/* <body> = tüm sayfa. Genel yazı tipi, renk ve arka planı burada veriyoruz. */
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif; /* sade, okunaklı yazı tipi */
+  line-height: 1.6;          /* satırlar arası boşluk → okunabilirliği artırır */
+  color: #1f2933;            /* yazı rengi (koyu gri). # ile renk = HEX kodu */
+  background: #f4f6f8;       /* açık gri arka plan */
+  max-width: 720px;          /* içeriği 720px ile sınırla (çok geniş ekranlarda okunaklı kalır) */
+  margin: 0 auto;            /* "0 auto" => üst/alt 0, sağ/sol otomatik => sayfayı ORTALAR */
+  padding: 24px;             /* kenarlardan iç boşluk */
+}
+
+/* ---------- ÜST BAŞLIK ALANI ---------- */
+.site-header {
+  text-align: center;        /* metni ortala */
+  padding: 24px 0;           /* üst-alt 24px, sağ-sol 0 iç boşluk */
+}
+
+.site-header h1 {
+  font-size: 40px;
+  color: #2563eb;            /* mavi */
+}
+
+.subtitle {
+  color: #6b7280;            /* soluk gri (ikincil bilgi için) */
+}
+
+/* ----------- NAVİGASYON (Flexbox tadımlık) ----------- */
+/*
+  Flexbox = elemanları kolayca YAN YANA dizmenin modern yolu.
+  "display: flex" verince, içindeki <a>'lar yan yana sıralanır.
+  (Flexbox'ı sonraki derste detaylı işleyeceğiz — şimdilik tat alman için.)
+*/
+.site-nav {
+  display: flex;             /* çocukları (linkleri) yan yana diz */
+  gap: 16px;                 /* linkler arası boşluk */
+  justify-content: center;   /* yatayda ortala */
+  margin: 16px 0;
+}
+
+.site-nav a {
+  text-decoration: none;     /* bağlantının alt çizgisini kaldır */
+  color: #2563eb;
+  font-weight: 600;          /* yarı kalın */
+}
+
+.site-nav a:hover {          /* :hover => fare üzerine GELDİĞİNDE */
+  text-decoration: underline;
+}
+
+/* ----------- KARTLAR (box model'i görmek için) ----------- */
+.card {
+  background: #ffffff;       /* beyaz arka plan */
+  border: 1px solid #e5e7eb; /* ince gri kenarlık (border) */
+  border-radius: 12px;       /* köşeleri yuvarlat */
+  padding: 20px;             /* İÇ boşluk: içerik kenarlığa yapışmasın */
+  margin-bottom: 16px;       /* DIŞ boşluk: kartlar arasını aç */
+}
+
+.card h2 {
+  margin-bottom: 8px;        /* başlık ile metni biraz ayır */
+  color: #111827;
+}
+
+.card ul {
+  /* listeyi biraz içeri al ki madde işaretleri görünsün */
+  padding-left: 20px;
+}
+
+/* ----------- ALT BİLGİ ----------- */
+.site-footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+/*
+  ----------- RESPONSIVE (mobil uyum) — tadımlık -----------
+  "@media" = ekran KOŞULU. Aşağısı şöyle der:
+  "Ekran genişliği 480px ve ALTINDAYSA, şu kuralları uygula."
+  Böylece telefonda yazıyı küçültüp boşlukları daraltıyoruz.
+  (Responsive'i de sonraki derste detaylandıracağız.)
+*/
+@media (max-width: 480px) {
+  .site-header h1 {
+    font-size: 30px;         /* küçük ekranda başlığı küçült */
+  }
+  body {
+    padding: 14px;           /* dar ekranda kenar boşluğunu azalt */
+  }
+}

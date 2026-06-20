@@ -1,0 +1,138 @@
+<!--
+  ============================================================
+  DERS 01b — FLEXBOX & CSS GRID
+  ============================================================
+  Bu sayfa, elemanları SAYFADA YERLEŞTİRMENİN iki modern yolunu
+  görerek öğretir:
+
+    • FLEXBOX → tek yönde diziliş (bir SIRA veya bir SÜTUN).
+               Örnek: navbar linkleri, bir satır kart, buton grubu.
+
+    • GRID    → iki yönde ızgara (SATIR + SÜTUN aynı anda).
+               Örnek: fotoğraf galerisi, kart panosu, sayfa düzeni.
+
+  Basit kural:
+    - Tek eksende diziyorsan  → Flexbox.
+    - Hem satır hem sütun ızgarası kuruyorsan → Grid.
+
+  Her demo, renkli numaralı kutularla bir özelliği gösterir.
+  Yorumları okuyup CSS'te değerleri değiştirerek dene.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox & Grid — Ders 01b</title>
+    <link rel="stylesheet" href="flexbox-grid.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>Flexbox &amp; Grid</h1>
+      <p>Her kutu bir elemandır. Aşağıdaki demolar onları nasıl dizdiğimizi gösterir.</p>
+    </header>
+
+    <!-- =================== FLEXBOX =================== -->
+    <h2 class="section-title">1) FLEXBOX — tek yönde diziliş</h2>
+
+    <!-- DEMO 1: Temel flex. Kutular yan yana + aralarında boşluk (gap). -->
+    <p class="label">a) Temel: <code>display:flex</code> + <code>gap</code> → kutular yan yana</p>
+    <div class="flex-demo basic">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+
+    <!-- DEMO 2: justify-content → ANA EKSENDE (yatay) dağıtım. -->
+    <p class="label">b) <code>justify-content</code> → yatayda dağıtım (4 farklı ayar):</p>
+
+    <p class="mini">justify-content: flex-start (başa yasla — varsayılan)</p>
+    <div class="flex-demo jc-start">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <p class="mini">justify-content: center (ortala)</p>
+    <div class="flex-demo jc-center">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <p class="mini">justify-content: space-between (uçlara yasla, araları eşit boşluk)</p>
+    <div class="flex-demo jc-between">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <p class="mini">justify-content: space-around (her kutunun etrafı eşit boşluk)</p>
+    <div class="flex-demo jc-around">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <!-- DEMO 3: align-items → ÇAPRAZ EKSENDE (dikey) hizalama. -->
+    <p class="label">c) <code>align-items</code> → dikeyde hizalama (konteyner yüksek olunca görünür):</p>
+
+    <p class="mini">align-items: center (dikeyde ortala)</p>
+    <div class="flex-demo tall ai-center">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <p class="mini">align-items: flex-end (alta yasla)</p>
+    <div class="flex-demo tall ai-end">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <!-- DEMO 4: flex-direction: column → sıra yerine SÜTUN. -->
+    <p class="label">d) <code>flex-direction: column</code> → yan yana yerine alt alta:</p>
+    <div class="flex-demo dir-column">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+    </div>
+
+    <!-- DEMO 5: flex-grow → bir eleman boşluğu doldurur. -->
+    <p class="label">e) <code>flex:1</code> → 2 numaralı kutu kalan boşluğu kaplar (esner):</p>
+    <div class="flex-demo basic">
+      <div class="box">1</div>
+      <div class="box grow">2 (flex:1)</div>
+      <div class="box">3</div>
+    </div>
+
+    <!-- =================== GRID =================== -->
+    <h2 class="section-title">2) CSS GRID — satır + sütun ızgarası</h2>
+
+    <!-- DEMO 1: 3 eşit sütun. -->
+    <p class="label">a) <code>grid-template-columns: repeat(3, 1fr)</code> → 3 eşit sütun
+       (<code>1fr</code> = "kalan alanın 1 payı")</p>
+    <div class="grid-demo cols-3">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+      <div class="box">4</div><div class="box">5</div><div class="box">6</div>
+    </div>
+
+    <!-- DEMO 2: Farklı sütun genişlikleri. -->
+    <p class="label">b) <code>grid-template-columns: 200px 1fr</code> → sol sabit 200px,
+       sağ kalanı kaplar (kenar çubuğu + içerik düzeni):</p>
+    <div class="grid-demo cols-sidebar">
+      <div class="box">yan</div>
+      <div class="box">içerik</div>
+    </div>
+
+    <!-- DEMO 3: Bir eleman birden fazla sütuna yayılır. -->
+    <p class="label">c) <code>grid-column: span 2</code> → 1 numara 2 sütun kaplar:</p>
+    <div class="grid-demo cols-3">
+      <div class="box wide">1 (span 2)</div>
+      <div class="box">2</div>
+      <div class="box">3</div><div class="box">4</div><div class="box">5</div>
+    </div>
+
+    <!-- DEMO 4: Responsive grid — otomatik sütun sayısı. -->
+    <p class="label">d) Responsive: <code>repeat(auto-fit, minmax(120px, 1fr))</code>
+       → pencereyi daralt/genişlet, sütun sayısı KENDİLİĞİNDEN değişir 👀</p>
+    <div class="grid-demo auto-fit">
+      <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+      <div class="box">4</div><div class="box">5</div><div class="box">6</div>
+      <div class="box">7</div><div class="box">8</div>
+    </div>
+
+    <footer class="page-footer">
+      <p>İpucu: Tarayıcı penceresini yatayda daraltıp genişlet — özellikle (d) demosunu izle.</p>
+    </footer>
+
+  </body>
+</html>

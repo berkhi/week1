@@ -1,0 +1,38 @@
+<!--
+  ============================================================
+  DERS 05 — ASYNC & FETCH (Parça 2)
+  ============================================================
+  Şimdiye kadarki kod ANINDA çalışıyordu. Ama bazı işler ZAMAN ALIR:
+  internetten veri çekmek, dosya okumak... Bunlar "asenkron" (async) işler.
+
+  Bu sayfa gerçek bir API'den (dummyjson.com) ürünleri çeker ve gösterir.
+  Mantık fetch.js'te.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders 05 — Async & Fetch</title>
+    <link rel="stylesheet" href="fetch.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Async &amp; Fetch</h1>
+      <p>Gerçek bir API'den canlı veri çek: <code>fetch</code> + <code>async/await</code></p>
+      <button id="yukle-btn">🔄 Ürünleri yeniden yükle</button>
+    </header>
+
+    <!-- Durum mesajı: "Yükleniyor...", hata vb. buraya yazılır -->
+    <p id="durum" class="durum"></p>
+
+    <!-- Ürün kartları buraya gelecek -->
+    <main id="urunler" class="izgara"></main>
+
+    <footer class="footer">
+      <p>Veri kaynağı: dummyjson.com · Kaynak kod: <code>fetch.js</code></p>
+    </footer>
+
+    <script src="fetch.js"></script>
+  </body>
+</html>

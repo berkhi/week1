@@ -1,0 +1,130 @@
+/* DERS 05 — DOM oyun alanı (görünüm) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background: #f4f6f8;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { color: #2563eb; }
+.header p { color: #6b7280; font-size: 14px; }
+
+.izgara {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.kart {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+}
+.kart h2 { font-size: 18px; color: #111827; margin-bottom: 4px; }
+.aciklama { color: #6b7280; font-size: 13px; margin-bottom: 12px; }
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: #1d4ed8; }
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.vurgu-metin { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1d4ed8; }
+
+/* Demo 2: tema kutusu + koyu sınıfı */
+.tema-kutu {
+  padding: 24px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #1f2933;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;     /* renk geçişi yumuşak olsun */
+}
+.tema-kutu.koyu {           /* JS bu sınıfı ekleyince devreye girer */
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Demo 4: görev satırı (flexbox: input + buton yan yana) */
+.kart .satir { display: flex; gap: 8px; }
+.kart .satir input { margin-bottom: 12px; }
+.kart .satir button { white-space: nowrap; }
+
+.gorev-listesi { list-style: none; display: grid; gap: 6px; }
+.gorev-listesi li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.gorev-listesi .sil-btn {
+  background: #ef4444;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.gorev-listesi .sil-btn:hover { background: #dc2626; }
+
+/* Demo 5: Olay Kâşifi */
+.tam-genislik { grid-column: 1 / -1; }   /* kartı tüm satıra yay */
+
+.kasif-kutu {
+  padding: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #3730a3;
+  border: 2px dashed #c7d2fe;
+  cursor: pointer;
+  user-select: none;        /* çift tıklayınca metin seçilmesin */
+  margin-bottom: 10px;
+}
+
+.kasif-baslik { font-size: 13px; color: #6b7280; margin: 6px 0; }
+
+.kasif-log {
+  list-style: none;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+  min-height: 44px;
+  max-height: 200px;
+  overflow-y: auto;          /* taşarsa kaydırma çubuğu çıksın */
+}
+.kasif-log li { padding: 2px 0; border-bottom: 1px solid #1e293b; }
+.kasif-log li:first-child { color: #4ade80; }  /* en yeni olay yeşil */
+.kasif-log .bos { color: #64748b; border: none; }
+
+.footer { text-align: center; color: #9ca3af; font-size: 13px; margin-top: 24px; }
+code { background: #eef2ff; color: #3730a3; padding: 1px 6px; border-radius: 4px; }

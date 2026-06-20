@@ -1,0 +1,108 @@
+<!--
+  ============================================================
+  DERS 01 — HTML TEMELLERİ
+  ============================================================
+  HTML = HyperText Markup Language (Metin İşaretleme Dili).
+  Web sayfasının İSKELETİdir: başlıklar, paragraflar, resimler,
+  bağlantılar... yani "İÇERİK ve YAPI" burada tanımlanır.
+  Görünüm (renk, boşluk, yerleşim) ise CSS'in işidir (style.css).
+
+  HTML "etiketlerden" (tag) oluşur. Bir etiket genelde çift gelir:
+      <p>Bu bir paragraf</p>
+       ↑ açılış         ↑ kapanış (önünde / var)
+  İçine yazdığın metin, o etiketin "içeriği"dir.
+-->
+
+<!-- Bu satır tarayıcıya "modern HTML5 kullanıyorum" der. Her sayfada en üstte olmalı. -->
+<!DOCTYPE html>
+
+<!-- <html> tüm sayfayı sarar. lang="tr" => sayfanın dili Türkçe (arama motorları ve ekran okuyucular için önemli). -->
+<html lang="tr">
+
+  <!--
+    <head> = sayfanın "arka plan bilgileri".
+    Burası EKRANDA GÖRÜNMEZ. Tarayıcıya/Google'a bilgi verir, dosya bağlar.
+  -->
+  <head>
+    <!-- Karakter seti: Türkçe karakterlerin (ç, ş, ğ, ı) düzgün görünmesi için. -->
+    <meta charset="UTF-8" />
+
+    <!-- Mobil uyumluluk için zorunlu satır: sayfayı cihaz genişliğine göre ölçekler. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tarayıcı sekmesinde görünen başlık. -->
+    <title>Hakkımda — Berk</title>
+
+    <!-- CSS dosyasını bu sayfaya bağlar. Görünümün hepsi orada. -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!--
+    <body> = EKRANDA GÖRÜNEN her şey burada.
+    Aşağıdaki etiketler "semantik" etiketler: ismi, içindeki içeriğin
+    ANLAMINI söyler. <div> de kullanılabilirdi ama semantik etiketler
+    hem okunabilirliği hem erişilebilirliği (ekran okuyucu) artırır.
+  -->
+  <body>
+
+    <!-- <header>: sayfanın üst kısmı / tanıtım alanı. -->
+    <header class="site-header">
+      <h1>Berk</h1> <!-- <h1> sayfanın EN ÖNEMLİ başlığı. Sayfada genelde tek tane olur. -->
+      <p class="subtitle">Web geliştirmeyi sıfırdan öğreniyorum 🚀</p>
+    </header>
+
+    <!-- <nav>: gezinme (navigation) bağlantıları. -->
+    <nav class="site-nav">
+      <!-- <a> = anchor = bağlantı. href, gidilecek adres. # şimdilik "boş hedef" demek. -->
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#beceriler">Beceriler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <!--
+      <main>: sayfanın ANA içeriği. Bir sayfada tek <main> olur.
+      İçini <section> (bölüm) parçalarına ayırıyoruz.
+    -->
+    <main>
+
+      <!-- id="hakkimda" => yukarıdaki <a href="#hakkimda"> tıklanınca buraya zıplar. -->
+      <section id="hakkimda" class="card">
+        <h2>Hakkımda</h2> <!-- <h2> = ikincil başlık (h1'den bir alt seviye). -->
+        <p>
+          Merhaba! Ben Berk. Bu sayfa, HTML ve CSS öğrenirken yazdığım
+          ilk örnek. Amacım: önce temeli sağlam atmak, sonra React'e geçmek.
+        </p>
+      </section>
+
+      <section id="beceriler" class="card">
+        <h2>Öğrendiklerim</h2>
+        <!--
+          <ul> = unordered list (sırasız liste, madde işaretli).
+          <li> = list item (her bir madde).
+          (Sıralı liste isteseydik <ol> kullanırdık: 1, 2, 3...)
+        -->
+        <ul>
+          <li>HTML — sayfanın iskeleti</li>
+          <li>CSS — görünüm ve yerleşim</li>
+          <li><strong>JavaScript</strong> — sıradaki konum</li> <!-- <strong>: önemli/kalın metin -->
+        </ul>
+      </section>
+
+      <section id="iletisim" class="card">
+        <h2>İletişim</h2>
+        <p>
+          Bana ulaş:
+          <!-- mailto: => tıklayınca e-posta uygulaması açılır. -->
+          <a href="mailto:berkhayta@gmail.com">berkhayta@gmail.com</a>
+        </p>
+      </section>
+
+    </main>
+
+    <!-- <footer>: sayfanın en altı / alt bilgi. -->
+    <footer class="site-footer">
+      <p>© 2026 Berk — Hafta 1 pratiği</p>
+    </footer>
+
+  </body>
+</html>

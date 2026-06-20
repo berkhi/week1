@@ -1,0 +1,103 @@
+/* ============================================================
+   DERS 02 — REACT SÜRÜMÜ (görünüm)
+   Ders 01'deki CSS bilgisi: grid, flexbox, box model, renkler.
+   ============================================================ */
+
+.sayfa {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.baslik {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.baslik h1 { color: #2563eb; font-size: 32px; }
+.baslik p  { color: #6b7280; font-size: 14px; }
+
+.rozet {
+  display: inline-block;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+/* Kartları grid ile diz: geniş ekranda 2 sütun, dar ekranda 1 (auto-fit). */
+.kart-listesi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Tek bir kart (Kart bileşeninin görünümü) */
+.kart {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+}
+.kart h2 { font-size: 18px; color: #111827; margin-bottom: 4px; }
+.kart .aciklama { color: #6b7280; font-size: 13px; margin-bottom: 12px; }
+
+/* Tüm satırı kaplayan vurgulu / bonus kartlar */
+.tam-genislik { grid-column: 1 / -1; }
+.kart.vurgu { border: 2px solid #2563eb; background: #eff6ff; }
+.kart.bonus { border: 2px dashed #10b981; }
+
+/* Koyu "terminal" çıktı kutusu */
+.cikti {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+.cikti .satir { padding: 2px 0; }
+
+/* Ürün listesi */
+.urun-listesi { list-style: none; }
+.urun-listesi li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #dbeafe;
+}
+.urun-listesi li:last-child { border-bottom: none; }
+.urun-ad { font-weight: 600; }
+.stokta-evet { color: #059669; }
+.stokta-hayir { color: #dc2626; }
+
+/* Bonus form (flexbox: input + buton yan yana) */
+.form-satiri { display: flex; gap: 8px; margin-bottom: 12px; }
+.form-satiri input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.form-satiri button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #10b981;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form-satiri button:hover { background: #059669; }
+
+.footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 28px;
+}
