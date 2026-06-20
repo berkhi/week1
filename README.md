@@ -12,7 +12,7 @@ Bu repo, Hafta 1 boyunca yazdığım örnekleri ve pratikleri toplar.
 - [x] **04 — Modern JS** — destructuring, spread/rest, template literals, modüller (import/export)
 - [x] **05 — DOM & async** — seçme/event, Promise, `fetch`, `async/await`
 - [x] **06 — Git & GitHub** — init, add, commit, push, ilk repo
-- [ ] **07 — React'e ilk adım** — Vite + react-ts, JSX, component + props, ilk `useState`
+- [x] **07 — React'e ilk adım** — Vite + react-ts, JSX, component + props, ilk `useState`
 
 ## 🔴 Tasarım Şeridi — İlerleme
 
@@ -23,9 +23,9 @@ Bu repo, Hafta 1 boyunca yazdığım örnekleri ve pratikleri toplar.
 
 ## 🎯 Hafta Sonu Çıktısı
 
-- [ ] Vanilla JS interaktif sayfa (bahşiş hesaplayıcı **veya** to-do) → GitHub'da
+- [x] Vanilla JS interaktif sayfa (DOM to-do + Ürün Panosu) → GitHub'da
 - [ ] İlk Figma pratik dosyası (renk + tipografi denemeleri)
-- [ ] Bonus: ilk `useState`'li React component
+- [x] Bonus: ilk `useState`'li React component (react-todo)
 
 ## Klasör Düzeni
 
